@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero";
+import Card from "../components/Card";
+---
+
+<Layout title="Outils Professionnel | Zaoui Gouder">
+  <Hero client:load />
+  <div class="products-header">
+    <img class="right-arrow" src={"../right-arrow.svg"} />
+    <h2>منتجاتنا</h2>
+    <img class="left-arrow" src={"../right-arrow.svg"} />
+  </div>
+  <div class="cards-section">
+    <Card client:only />
+  </div>
+</Layout>
+
+<script>
+  console.log("This is a log from the client side!");
+</script>
+
+<style>
+  /* Add your styles here */
+</style>

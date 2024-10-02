@@ -1,0 +1,54 @@
+---
+
+---
+
+<nav class="nav">
+  <h3 class="logo">Outils Professionnel</h3>
+  <img src="/drill.png" alt="drill" class="img1" />
+  <img src="/grinder.png" alt="drill" class="img2" />
+  <img src="/tool.png" alt="drill" class="img3" />
+</nav>
+<script>
+  document.querySelector(".logo").addEventListener("click", function () {
+    window.location.replace("/");
+  });
+</script>
+<style>
+  nav {
+    position: relative;
+    padding: 17px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(218, 218, 218);
+  }
+  .img1 {
+    top: 25px;
+    left: 15%;
+    transform: rotate(31deg);
+  }
+
+  .img2 {
+    bottom: 5px;
+    right: 8%;
+  }
+
+  .img3 {
+    top: 10px;
+    right: 22%;
+    transform: rotate(-31deg);
+  }
+
+  .logo {
+    color: #ff4e00;
+    font-size: 27px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  nav img {
+    position: absolute;
+    width: 30px; /* Adjust the size of the images */
+    height: 30px;
+  }
+</style>

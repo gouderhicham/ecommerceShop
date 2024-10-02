@@ -1,0 +1,63 @@
+---
+
+---
+
+<footer class="footer">
+  <div class="icons">
+    <a
+      rel="noreferrer"
+      target="_blank"
+      href={`https://api.whatsapp.com/send/?phone=213783126027&text=${"السلام عليكم"}&type=phone_number&app_absent=0`}
+    >
+      <img alt="whatsapp link" src="../../whatsapp.png" />
+    </a>
+    <a rel="noreferrer" target="_blank" href="https://t.me/Zaouiss">
+      <img alt="telegram Link" src="../../telegram.png" />
+    </a>
+    <a
+      href="https://www.facebook.com/bassi.harabi"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <img alt="facebook page link" src="../../facebook-circular-logo.png" />
+    </a>
+  </div>
+  <p>© جميع الحقوق محفوظة 2024 Gouder Hicham</p>
+</footer>
+<style>
+  .footer {
+    background-color: #252525;
+    padding: 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.9rem;
+    margin-top: 7rem;
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer a img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+
+  .footer a img:hover {
+    transform: scale(1.1); /* Slight zoom on hover for better interaction */
+  }
+
+  .footer a {
+    display: flex;
+    align-items: center;
+  }
+  .footer p {
+    color: white;
+    font-size: 1.1rem;
+  }
+</style>

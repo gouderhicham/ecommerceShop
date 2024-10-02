@@ -1,0 +1,154 @@
+---
+interface Props {
+  title: string;
+}
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Beiruti", sans-serif;
+    font-optical-sizing: auto;
+    color: black;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #20263b;
+  }
+  body {
+    direction: rtl;
+  }
+  .hero {
+    position: relative;
+    height: 400px;
+    background-image: url("/background.webp");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+  }
+  .hero * {
+    word-spacing: 5px;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.74),
+      rgba(0, 0, 0, 0.24),
+      rgba(0, 0, 0, 0.755)
+    ); /* Transparent to black gradient */
+    z-index: 0; /* Put it behind the content */
+  }
+
+  .hero-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 1; /* Ensures content is above the gradient */
+  }
+
+  .hero-content h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .hero-content button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff4e00;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+  }
+
+  .hero-content button:hover {
+    background-color: #c13b21; /* Darker color on hover */
+  }
+
+  .products-header {
+    background-color: #ff4e00;
+    text-align: center;
+    padding: 1rem 10% 1rem 10%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .products-header h2 {
+    font-size: 2.5rem;
+    color: white;
+  }
+  .right-arrow {
+    transform: rotate(180deg);
+  }
+  .left-arrow,
+  .right-arrow {
+    height: 40px;
+    width: 40px;
+    position: relative;
+  }
+  @media screen and (max-width: 380px) {
+    .hero-content h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    .products-header h2 {
+      font-size: 30px;
+    }
+    .hero-content button {
+      padding: 8px 17px;
+      font-size: 18px;
+    }
+    .products-header h2 {
+      font-size: 2.1rem;
+      color: white;
+    }
+  }
+</style>
