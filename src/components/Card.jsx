@@ -107,7 +107,7 @@ export default function Card() {
   }, []);
 
   useEffect(() => {
-    if (adminParam && adminParam === "IamAdmin") {
+    if (adminParam && adminParam.toLowerCase() === "iamadmin") {
       setAdmin(true);
     }
   }, [queryParams]);
